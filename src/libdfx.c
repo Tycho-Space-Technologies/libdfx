@@ -214,7 +214,7 @@ int dfx_cfg_load(int package_id)
 	}
 
 	snprintf(command, sizeof(command),
-		 "/configfs/device-tree/overlays/%s_image_%d",
+		 "/configfs/device-tree/overlays/%s_image_%lu",
 		 package_node->package_name, package_node->package_id);
 
 	len = strlen(command) + 1;
@@ -288,7 +288,7 @@ int dfx_cfg_drivers_load(int package_id)
 		return -DFX_NO_VALID_DRIVER_DTO_FILE;
 
 	snprintf(command, sizeof(command),
-		 "/configfs/device-tree/overlays/%s_driver_%d",
+		 "/configfs/device-tree/overlays/%s_driver_%lu",
 		 package_node->package_name, package_node->package_id);
 	len = strlen(command) + 1;
 	str = (char *) calloc((len), sizeof(char));
